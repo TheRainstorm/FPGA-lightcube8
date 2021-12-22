@@ -1,4 +1,4 @@
-module decoder6_64 (
+module decoder6x64 (
     input wire [5 : 0] x,
 
     output reg [63 : 0] y
