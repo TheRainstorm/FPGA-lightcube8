@@ -1,6 +1,6 @@
 module lightcube8_top (
     input wire clk,     //100MHz
-    input wire rst,
+    input wire resetn,  //active low
 
     //switch
     input wire [15:0] switch,
@@ -14,6 +14,8 @@ module lightcube8_top (
     output wire [7:0] row,                  //对应一行上8个LED灯的亮灭
     output wire [7:0] row_cs                //行选信号, 高电平为选中
 );
+    wire rst;
+    assign rst = ~resetn;
     //display mode
     wire display_mode;                      //0: 播放默认动画, 1: 通过串口接收动画
     assign display_mode = switch[0];

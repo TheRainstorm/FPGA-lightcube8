@@ -109,6 +109,5 @@ module baud_gen (
     wire sample1 = flag_start_bit && counter == (BAUD_DIV>>1);
     wire sample2 = counter == BAUD_DIV;
 
-    wire rx_valid;
     assign rx_valid = sample1 | sample2;
 endmodule
