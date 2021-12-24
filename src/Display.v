@@ -28,14 +28,16 @@ module Display (
     wire [5:0] scan_row;
     assign scan_row = cnt[LEN-1 -: 6];
 
+    wire [7:0] high_csn_tmp;
+    assign high_csn = ~high_csn_tmp;
     decoder3x8 decoder1(
         .x(scan_row[5:3]),
-        .y(~high_csn),
+        .y(high_csn_tmp)
     );
 
     decoder3x8 decoder2(
         .x(scan_row[2:0]),
-        .y(row_cs),
+        .y(row_cs)
     );
 
     assign row = frame_cube[scan_row];

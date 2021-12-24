@@ -25,7 +25,7 @@ module frame_gen (
                speed_ctrl ? cnt + 1 : cnt;
     end
 
-    assign frame_valid = cnt == 0;
+    assign frame_valid = ~display_mode & (cnt == 0);
 
     //scan_now指定的行全亮，构成一帧
     reg [5: 0] scan_row;

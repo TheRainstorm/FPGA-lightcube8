@@ -1,7 +1,7 @@
 module decoder6x64 (
     input wire [5 : 0] x,
 
-    output reg [63 : 0] y
+    output wire [63 : 0] y
 );
     wire [15: 0] y1;
     wire [31: 0] y2;

@@ -5,7 +5,7 @@ module uart_reciver (
 
     output wire tx, //no use
     output wire [8*64-1: 0] frame_cube_flat,
-    output wire frame_valid
+    output reg frame_valid
 );
     assign tx = 1'b1; //no use
 
@@ -27,16 +27,19 @@ module uart_reciver (
                     byte_valid         ? byte_cnt + 1 : byte_cnt;
     end
 
+    //byte_valid时，将byte存下来
     reg [7:0] frame_cube [63:0];
-
     always @(posedge clk) begin
         if(byte_valid) begin
             frame_cube[byte_cnt] <= byte;
         end
     end
 
-    wire frame_valid;
-    assign frame_valid = byte_valid & (byte_cnt==63);
+    //在将byte存下来的同时，将frame_valid置为1，维持一个周期
+    always @(posedge clk) begin
+        frame_valid <= rst ? 0 :
+                       ~frame_valid & byte_valid & (byte_cnt==63) ? 1 : 0;
+    end
 
     genvar i;
     generate
