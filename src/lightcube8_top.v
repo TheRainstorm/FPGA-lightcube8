@@ -5,17 +5,28 @@ module lightcube8_top (
     //switch
     input wire [15:0] switch,
 
+    //led
+    output wire [15:0] led,
+
+    //seg7
+    output wire [7 :0] num_csn,
+    output wire [6 :0] num_a_g,
+
     //uart
     input wire rx,
     output wire tx, //no use
 
     //display
-    output wire [7:0] high_csn,             //层选信号, 共阴极, 故低电平为选中
+    output wire [7:0] high_cs,             //层选信号
     output wire [7:0] row,                  //对应一行上8个LED灯的亮灭
     output wire [7:0] row_cs                //行选信号, 高电平为选中
 );
     wire rst;
     assign rst = ~resetn;
+
+    //led
+    assign led = switch;
+
     //display mode
     wire display_mode;                      //0: 播放默认动画, 1: 通过串口接收动画
     assign display_mode = switch[0];
@@ -52,6 +63,7 @@ module lightcube8_top (
 
     //根据模式选择动画，将一帧存储到reg中，用于Display显示
     //当frame_valid时，便更新frame，因此FPS由frame_valid决定
+    wire [31: 0] frame_cnt;
     frame_buffer frame_buffer(
         .clk(clk),
         .rst(rst),
@@ -62,9 +74,14 @@ module lightcube8_top (
         .frame_cube_default_flat(frame_cube_default_flat),
         .frame_valid_default(frame_valid_default),
 
+        .frame_cnt(frame_cnt),
         .frame_cube_flat(frame_cube_flat)
     );
     
+    wire high_csn;
+    wire high_cs;
+    assign high_cs = ~high_csn;
+
     //根据frame，生成扫描信号
     Display Display(
         .clk(clk),
@@ -74,6 +91,16 @@ module lightcube8_top (
         .high_csn(high_csn),
         .row(row),
         .row_cs(row_cs)
+    );
+
+
+    seg7 seg7(
+        .clk(clk),
+        .rst(rst),
+        .num_data(frame_cnt),
+
+        .num_csn(num_csn),
+        .num_a_g(num_a_g)
     );
 
 endmodule
