@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_lightcube8_top_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_lightcube8_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="59,238.295000 us"></ZoomStartTime>
+      <ZoomEndTime time="59,307.295001 us"></ZoomEndTime>
+      <Cursor1Time time="59,265.945000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="340"></NameColumnWidth>
+      <ValueColumnWidth column_width="156"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="/tb_lightcube8_top/CYCLE_100MHz" type="other">
+      <obj_property name="ElementShortName">CYCLE_100MHz</obj_property>
+      <obj_property name="ObjectShortName">CYCLE_100MHz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lightcube8_top/BAUD_PERIOD" type="other">
+      <obj_property name="ElementShortName">BAUD_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">BAUD_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="group11" type="group">
+      <obj_property name="label">Top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/rx" type="logic">
+         <obj_property name="ElementShortName">rx</obj_property>
+         <obj_property name="ObjectShortName">rx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/tx" type="logic">
+         <obj_property name="ElementShortName">tx</obj_property>
+         <obj_property name="ObjectShortName">tx</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/switch" type="array">
+         <obj_property name="ElementShortName">switch[15:0]</obj_property>
+         <obj_property name="ObjectShortName">switch[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/high_csn" type="array">
+         <obj_property name="ElementShortName">high_csn[7:0]</obj_property>
+         <obj_property name="ObjectShortName">high_csn[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/row" type="array">
+         <obj_property name="ElementShortName">row[7:0]</obj_property>
+         <obj_property name="ObjectShortName">row[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/row_cs" type="array">
+         <obj_property name="ElementShortName">row_cs[7:0]</obj_property>
+         <obj_property name="ObjectShortName">row_cs[7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group20" type="group">
+      <obj_property name="label">fame_gen</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/display_mode" type="logic">
+         <obj_property name="ElementShortName">display_mode</obj_property>
+         <obj_property name="ObjectShortName">display_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/display_speed" type="array">
+         <obj_property name="ElementShortName">display_speed[3:0]</obj_property>
+         <obj_property name="ObjectShortName">display_speed[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/frame_valid" type="logic">
+         <obj_property name="ElementShortName">frame_valid</obj_property>
+         <obj_property name="ObjectShortName">frame_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/scan_row" type="array">
+         <obj_property name="ElementShortName">scan_row[5:0]</obj_property>
+         <obj_property name="ObjectShortName">scan_row[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/mask" type="array">
+         <obj_property name="ElementShortName">mask[63:0]</obj_property>
+         <obj_property name="ObjectShortName">mask[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/frame_cube" type="array">
+         <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/speed_cnt" type="array">
+         <obj_property name="ElementShortName">speed_cnt[3:0]</obj_property>
+         <obj_property name="ObjectShortName">speed_cnt[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group105" type="group">
+      <obj_property name="label">Uart_reciver</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/rx" type="logic">
+         <obj_property name="ElementShortName">rx</obj_property>
+         <obj_property name="ObjectShortName">rx</obj_property>
+      </wvobject>
+      <wvobject fp_name="group115" type="group">
+         <obj_property name="label">uart_rx</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/uart_rx/rx_neg_edge" type="logic">
+            <obj_property name="ElementShortName">rx_neg_edge</obj_property>
+            <obj_property name="ObjectShortName">rx_neg_edge</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/uart_rx/rx_en" type="logic">
+            <obj_property name="ElementShortName">rx_en</obj_property>
+            <obj_property name="ObjectShortName">rx_en</obj_property>
+            <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/uart_rx/rx_valid" type="logic">
+            <obj_property name="ElementShortName">rx_valid</obj_property>
+            <obj_property name="ObjectShortName">rx_valid</obj_property>
+            <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/byte_valid" type="logic">
+         <obj_property name="ElementShortName">byte_valid</obj_property>
+         <obj_property name="ObjectShortName">byte_valid</obj_property>
+         <obj_property name="CustomSignalColor">#008080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/byte" type="array">
+         <obj_property name="ElementShortName">byte[7:0]</obj_property>
+         <obj_property name="ObjectShortName">byte[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/frame_valid" type="logic">
+         <obj_property name="ElementShortName">frame_valid</obj_property>
+         <obj_property name="ObjectShortName">frame_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/byte_cnt" type="array">
+         <obj_property name="ElementShortName">byte_cnt[5:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_cnt[5:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/frame_cube_flat" type="array">
+         <obj_property name="ElementShortName">frame_cube_flat[511:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube_flat[511:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/frame_cube" type="array">
+         <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group32" type="group">
+      <obj_property name="label">Buffer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/display_mode" type="logic">
+         <obj_property name="ElementShortName">display_mode</obj_property>
+         <obj_property name="ObjectShortName">display_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_cube_uart_flat" type="array">
+         <obj_property name="ElementShortName">frame_cube_uart_flat[511:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube_uart_flat[511:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_valid_uart" type="logic">
+         <obj_property name="ElementShortName">frame_valid_uart</obj_property>
+         <obj_property name="ObjectShortName">frame_valid_uart</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_cube_default_flat" type="array">
+         <obj_property name="ElementShortName">frame_cube_default_flat[511:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube_default_flat[511:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_valid_default" type="logic">
+         <obj_property name="ElementShortName">frame_valid_default</obj_property>
+         <obj_property name="ObjectShortName">frame_valid_default</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_cube_flat" type="array">
+         <obj_property name="ElementShortName">frame_cube_flat[511:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube_flat[511:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group24" type="group">
+      <obj_property name="label">Display</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/frame_cube" type="array">
+         <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/scan_row" type="array">
+         <obj_property name="ElementShortName">scan_row[5:0]</obj_property>
+         <obj_property name="ObjectShortName">scan_row[5:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
