@@ -11,6 +11,8 @@ module tb_lightcube8_top;
         clk = 1 ; #(CYCLE_100MHz/2) ;
     end
 
+    wire resetn;
+    assign resetn = ~rst;
     //reset generating
     initial begin
         rst      = 1'b0;
@@ -70,7 +72,7 @@ module tb_lightcube8_top;
 
     lightcube8_top lightcube8_top(
         .clk(clk),
-        .rst(rst),
+        .resetn(resetn),
         .switch(switch),
         .rx(rx),
 
