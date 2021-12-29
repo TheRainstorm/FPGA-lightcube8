@@ -3,6 +3,7 @@ module Display #(parameter SCAN_CLK_DIV=14)(
     input wire rst,
     input wire [8*64-1: 0] frame_cube_flat,
     // input wire [7:0] frame_cube [63:0],     //一层8行，8层64行，每行包含8个LED灯
+    input wire sync,
 
     output wire [7:0] high_csn,             //层选信号, 共阴极, 故低电平为选中
     output wire [7:0] row,                  //对应一行上8个LED灯的亮灭
@@ -21,7 +22,7 @@ module Display #(parameter SCAN_CLK_DIV=14)(
     //对clk进行分频
     reg [SCAN_CLK_DIV-1:0] cnt;
     always @(posedge clk) begin
-        cnt <= rst ? 0 : cnt + 1;
+        cnt <= rst | sync ? 0 : cnt + 1;
     end
 
     wire [5:0] scan_row;

@@ -1,6 +1,6 @@
 `include "defines.h"
 
-module lightcube8_top #(FRAME_GEN_CLK_DIV = 23, SCAN_CLK_DIV = 14)
+module lightcube8_top #(FRAME_GEN_CLK_DIV = 23, SCAN_CLK_DIV = 21)
 (
     input wire clk,     //100MHz
     input wire resetn,  //active low
@@ -72,6 +72,7 @@ module lightcube8_top #(FRAME_GEN_CLK_DIV = 23, SCAN_CLK_DIV = 14)
     //当frame_valid时，便更新frame，因此FPS由frame_valid决定
     //当为FRAME_MODE时，frame_buffer直接输出指定frame
     wire [31: 0] frame_cnt;
+    wire sync;  //表示一帧完成，用于Display显示，防止画面撕裂
     frame_buffer frame_buffer(
         .clk(clk),
         .rst(rst),
@@ -83,6 +84,7 @@ module lightcube8_top #(FRAME_GEN_CLK_DIV = 23, SCAN_CLK_DIV = 14)
         .frame_cube_default_flat(frame_cube_default_flat),
         .frame_valid_default(frame_valid_default),
 
+        .sync(sync),
         .frame_cnt(frame_cnt),
         .frame_cube_flat(frame_cube_flat)
     );
@@ -91,6 +93,7 @@ module lightcube8_top #(FRAME_GEN_CLK_DIV = 23, SCAN_CLK_DIV = 14)
     Display #(SCAN_CLK_DIV) Display(
         .clk(clk),
         .rst(rst),
+        .sync(sync),
         .frame_cube_flat(frame_cube_flat),
 
         .high_csn(high_csn),

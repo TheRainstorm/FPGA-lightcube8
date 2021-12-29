@@ -11,15 +11,22 @@ module frame_buffer (
     input wire [8*64-1: 0] frame_cube_default_flat,
     input wire frame_valid_default,
 
+    output reg sync,
     output reg [31: 0] frame_cnt,
     output reg [8*64-1: 0] frame_cube_flat
 );
-
     always @(posedge clk) begin
         case(display_mode)
-            `UART_MODE:     frame_cube_flat <= frame_valid_uart ? frame_cube_uart_flat : frame_cube_flat;
-            `GEN_MODE:     frame_cube_flat <= frame_valid_default ? frame_cube_default_flat : frame_cube_flat;
-            default:
+            `UART_MODE:     begin
+                frame_cube_flat <= frame_valid_uart ? frame_cube_uart_flat : frame_cube_flat;
+                sync <= frame_valid_uart ? 1'b1 : 1'b0;
+            end
+            `GEN_MODE: begin
+                frame_cube_flat <= frame_valid_default ? frame_cube_default_flat : frame_cube_flat;
+                sync <= frame_valid_default ? 1'b1 : 1'b0;
+            end
+            default: begin
+                sync <= 1'b0;
                 case(display_sel)
                     4'h0:   frame_cube_flat <= 256'hff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff;    //全亮
                     4'h1:   frame_cube_flat <= 256'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_ff_ff_ff_ff_ff_ff_ff_ff;    //1层
@@ -40,6 +47,7 @@ module frame_buffer (
                     4'hf:   frame_cube_flat <= 256'hff_81_81_81_81_81_81_ff_81_00_00_00_00_00_00_81_81_00_00_00_00_00_00_81_81_00_00_00_00_00_00_81_81_00_00_00_00_00_00_81_81_00_00_00_00_00_00_81_81_00_00_00_00_00_00_81_ff_81_81_81_81_81_81_ff;    //边框
                     // default: frame_cube_flat <= 256'hff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff_ff;
                 endcase
+            end
         endcase
     end
 
