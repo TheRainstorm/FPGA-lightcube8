@@ -10,6 +10,6 @@ module decoder6x64 (
         .y(y1)
     );
 
-    assign y2 = x[4] ? {y1, {16{0}}} : {{16{0}}, y1};
-    assign y = x[5] ? {y2, {32{0}}} : {{32{0}}, y2};
+    assign y2 = x[4] ? {y1, 16'b0} : {16'b0, y1};
+    assign y = x[5] ? {y2, 32'b0} : {32'b0, y2};
 endmodule
