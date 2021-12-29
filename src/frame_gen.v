@@ -1,7 +1,7 @@
-module frame_gen (
+module frame_gen #(parameter FRAME_GEN_CLK_DIV=23)(
     input wire clk,
     input wire rst,
-    input wire display_mode,
+    input wire en,
     input wire [3: 0] display_speed,
 
     output wire [8*64-1: 0] frame_cube_flat,
@@ -14,18 +14,18 @@ module frame_gen (
     wire speed_ctrl;
     assign speed_ctrl = (speed_cnt == display_speed);
     always @(posedge clk) begin
-        speed_cnt <= rst | speed_ctrl? 0 : speed_cnt + 1;
+        speed_cnt <= rst | ~en | speed_ctrl? 0 : speed_cnt + 1;
     end
 
     //对clk进行分频，最慢为每一帧1秒，display_speed为16档，故最快为每帧1/16秒
-    parameter LEN = 23;     // 2*23/100M * 16 = 1.34s
-    reg [LEN-1:0] cnt;
+    // parameter LEN = 23;     // 2*23/100M * 16 = 1.34s
+    reg [FRAME_GEN_CLK_DIV-1:0] cnt;
     always @(posedge clk) begin
-        cnt <= rst | display_mode? 0 :
+        cnt <= rst | ~en? 0 :
                speed_ctrl ? cnt + 1 : cnt;
     end
 
-    assign frame_valid = ~display_mode & (cnt == 0);
+    assign frame_valid = en & (cnt == 0);
 
     //scan_now指定的行全亮，构成一帧
     reg [5: 0] scan_row;

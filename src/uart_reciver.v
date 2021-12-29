@@ -1,6 +1,7 @@
 module uart_reciver (
     input wire clk,
     input wire rst,
+    input wire en,
     input wire rx,
 
     output wire tx, //no use
@@ -14,6 +15,7 @@ module uart_reciver (
     uart_rx uart_rx(
         .clk_100M(clk),
         .rst(rst),
+        .en(en),
         .rx(rx),
 
         .byte_valid(byte_valid),

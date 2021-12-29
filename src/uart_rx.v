@@ -10,6 +10,7 @@
 module uart_rx (
     input wire clk_100M,
     input wire rst,
+    input wire en,
     input wire rx,
 
     output wire byte_valid,

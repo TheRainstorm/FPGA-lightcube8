@@ -1,4 +1,4 @@
-module Display (
+module Display #(parameter SCAN_CLK_DIV=14)(
     input wire clk,
     input wire rst,
     input wire [8*64-1: 0] frame_cube_flat,
@@ -19,14 +19,13 @@ module Display (
     endgenerate
 
     //对clk进行分频
-    parameter LEN = 14;
-    reg [LEN-1:0] cnt;
+    reg [SCAN_CLK_DIV-1:0] cnt;
     always @(posedge clk) begin
         cnt <= rst ? 0 : cnt + 1;
     end
 
     wire [5:0] scan_row;
-    assign scan_row = cnt[LEN-1 -: 6];
+    assign scan_row = cnt[SCAN_CLK_DIV-1 -: 6];
 
     wire [7:0] high_csn_tmp;
     assign high_csn = ~high_csn_tmp;

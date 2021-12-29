@@ -70,7 +70,7 @@ module tb_lightcube8_top;
     wire [7:0] row     ;
     wire [7:0] row_cs  ;
 
-    lightcube8_top lightcube8_top(
+    lightcube8_top #(.FRAME_GEN_CLK_DIV(14), .SCAN_CLK_DIV(14)) lightcube8_top(
         .clk(clk),
         .resetn(resetn),
         .switch(switch),
