@@ -20,7 +20,7 @@ def parse_frames(file_name):
 FPS = 30
 file_name = 'frames.txt'
 
-with serial.Serial(port='COM1', baudrate=115200, timeout=None) as ser:
+with serial.Serial(port='COM7', baudrate=115200, timeout=None) as ser:
 
     frame_list = parse_frames(file_name)
     print('共{}帧, FPS={}, 时间={}s'.format(len(frame_list), FPS, len(frame_list)/FPS))

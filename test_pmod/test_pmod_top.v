@@ -14,9 +14,9 @@ module test_pmod_top (
 
     assign led = switch;
 
-    assign Ja = switch[15:8];
-    assign Jb = 16'hffff;
-    assign Jc = 16'b0;
+    assign Ja = 8'h80;
+    assign Jb = switch[15:8];
+    assign Jc = 8'b0;
     assign Jd = switch[7 :0];
     
 endmodule

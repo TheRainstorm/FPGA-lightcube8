@@ -26,13 +26,19 @@ module tb_lightcube8_top;
     reg rx;
     reg [15: 0] switch;
 
+    // //FRAME MODE
     // initial begin
     //     rx = 1'b1;
-    //     switch = 16'b0;
-        
-    //     switch[0] = 1'b0;   //default mode
+    //     switch = 16'h000f;  //mode: 2'b00, sel: 0xf
     // end
 
+    // //GEN MODE
+    // initial begin
+    //     rx = 1'b1;
+    //     switch = 16'h800f;  //mode: 2'b10, speed: 0xf
+    // end
+
+    //UART MODE
     integer i, j, k;
     reg [7: 0] data;
     initial begin
