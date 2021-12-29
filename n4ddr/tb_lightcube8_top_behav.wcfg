@@ -11,15 +11,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
-      <ZoomEndTime time="69.200000001 ms"></ZoomEndTime>
-      <Cursor1Time time="13.900000000 ms"></Cursor1Time>
+      <ZoomStartTime time="2623317000fs"></ZoomStartTime>
+      <ZoomEndTime time="2623364001fs"></ZoomEndTime>
+      <Cursor1Time time="2623445000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="340"></NameColumnWidth>
-      <ValueColumnWidth column_width="152"></ValueColumnWidth>
+      <ValueColumnWidth column_width="139"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
+   <wave_markers>
+      <marker time="11733065000" label="" />
+      <marker time="11569225000" label="" />
+   </wave_markers>
    <wvobject fp_name="/tb_lightcube8_top/CYCLE_100MHz" type="other">
       <obj_property name="ElementShortName">CYCLE_100MHz</obj_property>
       <obj_property name="ObjectShortName">CYCLE_100MHz</obj_property>
@@ -31,7 +35,6 @@
    <wvobject fp_name="group11" type="group">
       <obj_property name="label">Top</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_lightcube8_top/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -109,11 +112,34 @@
          <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/frame_valid" type="logic">
+         <obj_property name="ElementShortName">frame_valid</obj_property>
+         <obj_property name="ObjectShortName">frame_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="group167" type="group">
+         <obj_property name="label">decoder6x64</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/decoder6x64/x" type="array">
+            <obj_property name="ElementShortName">x[5:0]</obj_property>
+            <obj_property name="ObjectShortName">x[5:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/decoder6x64/y" type="array">
+            <obj_property name="ElementShortName">y[63:0]</obj_property>
+            <obj_property name="ObjectShortName">y[63:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/decoder6x64/y1" type="array">
+            <obj_property name="ElementShortName">y1[15:0]</obj_property>
+            <obj_property name="ObjectShortName">y1[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/decoder6x64/y2" type="array">
+            <obj_property name="ElementShortName">y2[31:0]</obj_property>
+            <obj_property name="ObjectShortName">y2[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group105" type="group">
       <obj_property name="label">Uart_reciver</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -193,6 +219,10 @@
          <obj_property name="ElementShortName">display_mode[1:0]</obj_property>
          <obj_property name="ObjectShortName">display_mode[1:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/display_sel" type="array">
+         <obj_property name="ElementShortName">display_sel[3:0]</obj_property>
+         <obj_property name="ObjectShortName">display_sel[3:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_cube_uart_flat" type="array">
          <obj_property name="ElementShortName">frame_cube_uart_flat[511:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cube_uart_flat[511:0]</obj_property>
@@ -217,15 +247,14 @@
          <obj_property name="ElementShortName">frame_cnt[31:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cnt[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/display_sel" type="array">
-         <obj_property name="ElementShortName">display_sel[3:0]</obj_property>
-         <obj_property name="ObjectShortName">display_sel[3:0]</obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/sync" type="logic">
+         <obj_property name="ElementShortName">sync</obj_property>
+         <obj_property name="ObjectShortName">sync</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group24" type="group">
       <obj_property name="label">Display</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -237,6 +266,10 @@
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/frame_cube" type="array">
          <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/sync" type="logic">
+         <obj_property name="ElementShortName">sync</obj_property>
+         <obj_property name="ObjectShortName">sync</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/cnt" type="array">
          <obj_property name="ElementShortName">cnt[13:0]</obj_property>
@@ -250,13 +283,13 @@
          <obj_property name="ElementShortName">high_csn[7:0]</obj_property>
          <obj_property name="ObjectShortName">high_csn[7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/row" type="array">
-         <obj_property name="ElementShortName">row[7:0]</obj_property>
-         <obj_property name="ObjectShortName">row[7:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/row_cs" type="array">
          <obj_property name="ElementShortName">row_cs[7:0]</obj_property>
          <obj_property name="ObjectShortName">row_cs[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/row" type="array">
+         <obj_property name="ElementShortName">row[7:0]</obj_property>
+         <obj_property name="ObjectShortName">row[7:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
