@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="59,238.295000 us"></ZoomStartTime>
-      <ZoomEndTime time="59,307.295001 us"></ZoomEndTime>
-      <Cursor1Time time="59,265.945000 us"></Cursor1Time>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="69.200000001 ms"></ZoomEndTime>
+      <Cursor1Time time="13.900000000 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="340"></NameColumnWidth>
-      <ValueColumnWidth column_width="156"></ValueColumnWidth>
+      <ValueColumnWidth column_width="152"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
    <wvobject fp_name="/tb_lightcube8_top/CYCLE_100MHz" type="other">
@@ -65,24 +65,37 @@
          <obj_property name="ObjectShortName">row_cs[7:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group20" type="group">
-      <obj_property name="label">fame_gen</obj_property>
+   <wvobject fp_name="group82" type="group">
+      <obj_property name="label">frame_gen</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/display_mode" type="logic">
-         <obj_property name="ElementShortName">display_mode</obj_property>
-         <obj_property name="ObjectShortName">display_mode</obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/en" type="logic">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/display_speed" type="array">
          <obj_property name="ElementShortName">display_speed[3:0]</obj_property>
          <obj_property name="ObjectShortName">display_speed[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/frame_valid" type="logic">
-         <obj_property name="ElementShortName">frame_valid</obj_property>
-         <obj_property name="ObjectShortName">frame_valid</obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/speed_cnt" type="array">
+         <obj_property name="ElementShortName">speed_cnt[3:0]</obj_property>
+         <obj_property name="ObjectShortName">speed_cnt[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/speed_ctrl" type="logic">
+         <obj_property name="ElementShortName">speed_ctrl</obj_property>
+         <obj_property name="ObjectShortName">speed_ctrl</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/cnt" type="array">
+         <obj_property name="ElementShortName">cnt[13:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt[13:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/scan_row" type="array">
          <obj_property name="ElementShortName">scan_row[5:0]</obj_property>
@@ -96,10 +109,6 @@
          <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_gen/speed_cnt" type="array">
-         <obj_property name="ElementShortName">speed_cnt[3:0]</obj_property>
-         <obj_property name="ObjectShortName">speed_cnt[3:0]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group105" type="group">
       <obj_property name="label">Uart_reciver</obj_property>
@@ -112,6 +121,10 @@
       <wvobject fp_name="/tb_lightcube8_top/rst" type="logic">
          <obj_property name="ElementShortName">rst</obj_property>
          <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/en" type="logic">
+         <obj_property name="ElementShortName">en</obj_property>
+         <obj_property name="ObjectShortName">en</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/uart_reciver/rx" type="logic">
          <obj_property name="ElementShortName">rx</obj_property>
@@ -171,13 +184,14 @@
    <wvobject fp_name="group32" type="group">
       <obj_property name="label">Buffer</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/display_mode" type="logic">
-         <obj_property name="ElementShortName">display_mode</obj_property>
-         <obj_property name="ObjectShortName">display_mode</obj_property>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/display_mode" type="array">
+         <obj_property name="ElementShortName">display_mode[1:0]</obj_property>
+         <obj_property name="ObjectShortName">display_mode[1:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_cube_uart_flat" type="array">
          <obj_property name="ElementShortName">frame_cube_uart_flat[511:0]</obj_property>
@@ -199,6 +213,14 @@
          <obj_property name="ElementShortName">frame_cube_flat[511:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cube_flat[511:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/frame_cnt" type="array">
+         <obj_property name="ElementShortName">frame_cnt[31:0]</obj_property>
+         <obj_property name="ObjectShortName">frame_cnt[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/frame_buffer/display_sel" type="array">
+         <obj_property name="ElementShortName">display_sel[3:0]</obj_property>
+         <obj_property name="ObjectShortName">display_sel[3:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="group24" type="group">
       <obj_property name="label">Display</obj_property>
@@ -208,13 +230,33 @@
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/frame_cube" type="array">
          <obj_property name="ElementShortName">frame_cube[63:0][7:0]</obj_property>
          <obj_property name="ObjectShortName">frame_cube[63:0][7:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/cnt" type="array">
+         <obj_property name="ElementShortName">cnt[13:0]</obj_property>
+         <obj_property name="ObjectShortName">cnt[13:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/scan_row" type="array">
          <obj_property name="ElementShortName">scan_row[5:0]</obj_property>
          <obj_property name="ObjectShortName">scan_row[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/high_csn" type="array">
+         <obj_property name="ElementShortName">high_csn[7:0]</obj_property>
+         <obj_property name="ObjectShortName">high_csn[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/row" type="array">
+         <obj_property name="ElementShortName">row[7:0]</obj_property>
+         <obj_property name="ObjectShortName">row[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_lightcube8_top/lightcube8_top/Display/row_cs" type="array">
+         <obj_property name="ElementShortName">row_cs[7:0]</obj_property>
+         <obj_property name="ObjectShortName">row_cs[7:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

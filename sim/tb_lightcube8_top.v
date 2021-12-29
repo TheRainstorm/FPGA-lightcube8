@@ -39,9 +39,9 @@ module tb_lightcube8_top;
         rx = 1'b1;
         switch = 16'b0;
 
-        switch[0] = 1'b0;   //default mode
+        switch[15:14] = 2'b00;   //default mode
         #3000
-        switch[0] = 1'b1;   //uart mode
+        switch[15:14] = 2'b11;   //uart mode
 
         for(i = 0; i<10; i = i + 1) begin   //10 frames
             for(j =0; j<64; j = j + 1) begin    //64 bytes
